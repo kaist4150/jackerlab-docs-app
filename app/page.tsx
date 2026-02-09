@@ -1,32 +1,5 @@
 import Link from 'next/link';
-import { Wrench, Database, Gamepad2, ArrowRight } from 'lucide-react';
-
-const services = [
-  {
-    name: 'Tools',
-    href: '/services/tools',
-    description: '100개 이상의 온라인 도구. JSON 포맷터, 인코더, 계산기 등.',
-    icon: Wrench,
-    color: 'bg-blue-500',
-    lightColor: 'bg-blue-50',
-  },
-  {
-    name: 'Data',
-    href: '/services/data',
-    description: '31개 공공데이터 소스 통합. API 프록시로 CORS 해결.',
-    icon: Database,
-    color: 'bg-green-500',
-    lightColor: 'bg-green-50',
-  },
-  {
-    name: 'Games',
-    href: '/services/games',
-    description: '브라우저에서 즐기는 10개 웹 게임. 설치 없이 바로 플레이.',
-    icon: Gamepad2,
-    color: 'bg-purple-500',
-    lightColor: 'bg-purple-50',
-  },
-];
+import { ArrowRight, Globe, Zap, Lock, MonitorSmartphone } from 'lucide-react';
 
 export default function HomePage() {
   return (
@@ -38,57 +11,81 @@ export default function HomePage() {
           운영 중
         </div>
         <h1 className="text-4xl font-bold text-gray-900 mb-4 tracking-tight">
-          JackerLab 문서
+          JackerLab
         </h1>
         <p className="text-xl text-gray-600 leading-relaxed">
-          개발자와 모두를 위한 서비스 플랫폼.<br />
-          유용한 도구, 공공데이터 조회, 게임을 제공합니다.
+          누구나 무료로 사용할 수 있는 웹 서비스 플랫폼입니다.
         </p>
       </div>
 
-      {/* Services Grid */}
-      <section className="mb-12">
-        <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
-          서비스
-        </h2>
-        <div className="grid gap-4">
-          {services.map((service) => {
-            const Icon = service.icon;
-            return (
-              <Link
-                key={service.name}
-                href={service.href}
-                className="group relative flex items-center gap-4 p-4 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all"
-              >
-                <div className={`w-12 h-12 ${service.lightColor} rounded-xl flex items-center justify-center`}>
-                  <Icon size={24} className={service.color.replace('bg-', 'text-')} />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
-                    {service.name}
-                  </h3>
-                  <p className="text-sm text-gray-500">{service.description}</p>
-                </div>
-                <ArrowRight size={16} className="text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all" />
-              </Link>
-            );
-          })}
+      {/* About */}
+      <section className="mb-10">
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">소개</h2>
+        <div className="text-gray-600 text-[15px] leading-relaxed space-y-3">
+          <p>
+            JackerLab은 개발자와 일반 사용자 모두를 위한 유틸리티 서비스 플랫폼입니다.
+            온라인 도구, 공공데이터 조회, 웹 게임 등 다양한 서비스를 제공합니다.
+          </p>
+          <p>
+            별도의 설치나 회원가입 없이 브라우저에서 바로 사용할 수 있으며,
+            모든 서비스는 무료로 제공됩니다.
+          </p>
         </div>
       </section>
 
-      {/* Info */}
-      <section className="p-6 bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-2xl border border-gray-200">
-        <h2 className="font-semibold text-gray-900 mb-3">JackerLab이란?</h2>
-        <p className="text-gray-600 text-sm leading-relaxed mb-4">
-          JackerLab은 개발자와 일반 사용자 모두를 위한 유틸리티 서비스 플랫폼입니다.
-          별도의 설치나 로그인 없이 브라우저에서 바로 사용할 수 있으며,
-          모든 서비스는 무료로 제공됩니다.
-        </p>
-        <div className="flex flex-wrap gap-2 text-xs">
-          <span className="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-gray-600">Next.js</span>
-          <span className="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-gray-600">TypeScript</span>
-          <span className="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-gray-600">Tailwind CSS</span>
-          <span className="px-2.5 py-1 bg-white border border-gray-200 rounded-full text-gray-600">Vercel</span>
+      {/* Principles */}
+      <section className="mb-10">
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">특징</h2>
+        <div className="grid grid-cols-2 gap-3">
+          <div className="p-4 rounded-xl border border-gray-200">
+            <Zap size={20} className="text-yellow-500 mb-2" />
+            <h3 className="text-sm font-semibold text-gray-900 mb-1">무료 & 무제한</h3>
+            <p className="text-xs text-gray-500">모든 기능을 무료로 제한 없이 사용</p>
+          </div>
+          <div className="p-4 rounded-xl border border-gray-200">
+            <Lock size={20} className="text-green-500 mb-2" />
+            <h3 className="text-sm font-semibold text-gray-900 mb-1">로그인 불필요</h3>
+            <p className="text-xs text-gray-500">회원가입 없이 바로 사용 가능</p>
+          </div>
+          <div className="p-4 rounded-xl border border-gray-200">
+            <MonitorSmartphone size={20} className="text-blue-500 mb-2" />
+            <h3 className="text-sm font-semibold text-gray-900 mb-1">반응형</h3>
+            <p className="text-xs text-gray-500">PC, 태블릿, 모바일 모두 지원</p>
+          </div>
+          <div className="p-4 rounded-xl border border-gray-200">
+            <Globe size={20} className="text-purple-500 mb-2" />
+            <h3 className="text-sm font-semibold text-gray-900 mb-1">브라우저 처리</h3>
+            <p className="text-xs text-gray-500">데이터를 서버로 보내지 않아 안전</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Quick Links */}
+      <section>
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">바로가기</h2>
+        <div className="grid gap-2">
+          <Link
+            href="/services"
+            className="group flex items-center justify-between p-4 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all"
+          >
+            <div>
+              <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">서비스 목록</h3>
+              <p className="text-sm text-gray-500">운영 중인 서비스 확인</p>
+            </div>
+            <ArrowRight size={16} className="text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all" />
+          </Link>
+          <a
+            href="https://jackerlab.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center justify-between p-4 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all"
+          >
+            <div>
+              <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">JackerLab 홈</h3>
+              <p className="text-sm text-gray-500">jackerlab.com</p>
+            </div>
+            <ArrowRight size={16} className="text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all" />
+          </a>
         </div>
       </section>
     </div>

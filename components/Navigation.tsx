@@ -3,28 +3,11 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { Menu, X, BookOpen, Wrench, Database, Gamepad2, TrendingUp, Home, LayoutTemplate, Brain, GraduationCap, Code } from 'lucide-react';
+import { Menu, X, BookOpen, Home, Server } from 'lucide-react';
 
 const menuItems = [
-  {
-    title: '시작하기',
-    items: [
-      { name: '소개', href: '/', icon: Home },
-    ],
-  },
-  {
-    title: '서비스',
-    items: [
-      { name: 'Tools', href: '/services/tools', icon: Wrench, color: 'text-blue-500' },
-      { name: 'Data', href: '/services/data', icon: Database, color: 'text-green-500' },
-      { name: 'Games', href: '/services/games', icon: Gamepad2, color: 'text-purple-500' },
-      { name: 'Trading', href: '/services/trading', icon: TrendingUp, color: 'text-orange-500' },
-      { name: 'Templates', href: '/services/templates', icon: LayoutTemplate, color: 'text-pink-500' },
-      { name: 'AI', href: '/services/ai', icon: Brain, color: 'text-cyan-500' },
-      { name: 'Learning', href: '/services/learning', icon: GraduationCap, color: 'text-yellow-500' },
-      { name: 'Playground', href: '/services/playground', icon: Code, color: 'text-red-500' },
-    ],
-  },
+  { name: '소개', href: '/', icon: Home },
+  { name: '서비스', href: '/services', icon: Server },
 ];
 
 export default function Navigation() {
@@ -74,41 +57,33 @@ export default function Navigation() {
         </div>
 
         {/* Menu */}
-        <nav className="p-4 space-y-6">
-          {menuItems.map((section) => (
-            <div key={section.title}>
-              <h3 className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-3">
-                {section.title}
-              </h3>
-              <ul className="space-y-1">
-                {section.items.map((item) => {
-                  const Icon = item.icon;
-                  const isActive = pathname === item.href;
-                  const color = 'color' in item ? item.color : 'text-gray-500';
+        <nav className="p-4">
+          <ul className="space-y-1">
+            {menuItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = pathname === item.href;
 
-                  return (
-                    <li key={item.name}>
-                      <Link
-                        href={item.href}
-                        onClick={() => setIsOpen(false)}
-                        className={`
-                          flex items-center gap-3 px-3 py-2 rounded-lg
-                          transition-colors duration-150
-                          ${isActive
-                            ? 'bg-blue-50 text-blue-600'
-                            : 'text-gray-700 hover:bg-gray-100'
-                          }
-                        `}
-                      >
-                        <Icon size={18} className={isActive ? 'text-blue-600' : color} />
-                        <span className="text-sm font-medium">{item.name}</span>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          ))}
+              return (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`
+                      flex items-center gap-3 px-3 py-2 rounded-lg
+                      transition-colors duration-150
+                      ${isActive
+                        ? 'bg-blue-50 text-blue-600'
+                        : 'text-gray-700 hover:bg-gray-100'
+                      }
+                    `}
+                  >
+                    <Icon size={18} className={isActive ? 'text-blue-600' : 'text-gray-500'} />
+                    <span className="text-sm font-medium">{item.name}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </nav>
       </aside>
     </>
