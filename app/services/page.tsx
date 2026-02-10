@@ -106,7 +106,7 @@ export default function ServicesPage() {
         </p>
       </div>
 
-      <div className="space-y-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {services.map((service) => {
           const Icon = service.icon;
           return (
