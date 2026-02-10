@@ -74,18 +74,6 @@ export default function HomePage() {
             </div>
             <ArrowRight size={16} className="text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all" />
           </Link>
-          <a
-            href="https://jackerlab.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center justify-between p-4 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all"
-          >
-            <div>
-              <h3 className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">JackerLab 홈</h3>
-              <p className="text-sm text-gray-500">jackerlab.com</p>
-            </div>
-            <ArrowRight size={16} className="text-gray-400 group-hover:text-blue-500 group-hover:translate-x-1 transition-all" />
-          </a>
         </div>
       </section>
     </div>
