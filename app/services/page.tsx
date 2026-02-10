@@ -1,4 +1,4 @@
-import { ExternalLink, Wrench, Database, Gamepad2, TrendingUp, LayoutTemplate, BookOpen } from 'lucide-react';
+import { ExternalLink, Wrench, Database, Gamepad2, TrendingUp, LayoutTemplate, BookOpen, Code } from 'lucide-react';
 
 const services = [
   {
@@ -76,6 +76,23 @@ const services = [
       { name: '웹 페이지', detail: '대시보드, 랜딩, 블로그, 이커머스, 포트폴리오' },
       { name: '섹션/컴포넌트', detail: '프라이싱, 히어로, 네비게이션, 푸터, FAQ, 폼, 모달' },
       { name: '워크시트', detail: '한글, 영어, 일본어, 수학, 색칠, 퍼즐 학습지' },
+    ],
+  },
+  {
+    name: 'Playground',
+    url: 'https://playground.jackerlab.com',
+    description: '22개 언어/프레임워크 코드 에디터와 실시간 실행 환경.',
+    color: 'bg-cyan-500',
+    lightColor: 'bg-cyan-50',
+    textColor: 'text-cyan-700',
+    borderColor: 'border-cyan-200',
+    icon: Code,
+    categories: [
+      { name: '웹 개발', detail: 'HTML/JS, React, Vue' },
+      { name: '프로그래밍', detail: 'JavaScript, TypeScript, Python, Go, Lua, C/C++, SQL, Blockly' },
+      { name: '시각화', detail: 'Mermaid, Chart.js, D3.js' },
+      { name: '크리에이티브', detail: 'Three.js, p5.js, Tone.js, Matter.js, GLSL, A-Frame' },
+      { name: 'AI/기타', detail: 'TensorFlow.js, LaTeX' },
     ],
   },
   {
