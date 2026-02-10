@@ -56,16 +56,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="flex min-h-screen overflow-hidden">
+        <div className="flex min-h-screen">
           <Navigation />
-          <main className="flex-1 min-w-0 w-0 p-6 lg:p-8 pt-20 lg:pt-8 bg-gray-50 overflow-hidden" style={{ contain: 'layout' }}>
+          <main className="flex-1 min-w-0 w-0 p-6 lg:p-8 pt-20 lg:pt-8 bg-gray-50 overflow-hidden">
             <div className="max-w-full">
               {children}
             </div>
-            <div className="mt-8 overflow-hidden" style={{ contain: 'inline-size' }}>
-              <AdBannerBottom slot="9727264203" />
-            </div>
           </main>
+        </div>
+        <div className="bg-gray-50 pl-0 lg:pl-64 overflow-hidden" style={{ contain: 'layout inline-size' }}>
+          <div className="px-6 lg:px-8 pb-4">
+            <AdBannerBottom slot="9727264203" />
+          </div>
         </div>
       </body>
     </html>
